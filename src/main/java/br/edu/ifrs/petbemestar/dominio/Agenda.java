@@ -3,13 +3,19 @@ package br.edu.ifrs.petbemestar.dominio;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Agenda {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @ManyToOne 
     private Pet pet;
     private TipoProcedimento tipoProcedimento;
     private LocalDateTime horario;
@@ -67,5 +73,10 @@ public class Agenda {
     public void setStatus(StatusAtendimento status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Agenda [tipoProcedimento=" + tipoProcedimento + ", horario=" + horario + ", status=" + status + "]";
+	}
     
 }

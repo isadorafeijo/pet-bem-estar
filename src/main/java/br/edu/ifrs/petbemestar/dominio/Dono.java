@@ -3,16 +3,21 @@ package br.edu.ifrs.petbemestar.dominio;
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.GeneratedValue;
 
 @Entity
 public class Dono {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
 	private String telefone;
 	
+	@OneToMany(mappedBy = "dono")
 	private List<Pet> pets = new ArrayList<>();
 	 
 	public Dono() {	
@@ -56,7 +61,9 @@ public class Dono {
         pets.add(pet);
         pet.setDono(this);
     }
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Dono [nome=" + nome + "]";
+	}
 }
