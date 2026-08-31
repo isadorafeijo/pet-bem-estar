@@ -1,4 +1,4 @@
-package petBemEstar;
+package br.edu.ifrs.petbemestar.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import jakarta.persistence.Entity;
 public class Pet {
 
 	@Id
-	private Long Id;
+	private Long id;
 	private String nome;
 	private Dono dono;
 	private List<Agenda> agendamentos = new ArrayList<>();
@@ -18,17 +18,17 @@ public class Pet {
 	}
 	
 	public Pet(Long id, String nome, Dono dono) {
-		Id = id;
+		this.id = id;
 		this.nome = nome;
 		this.dono = dono;
 	}
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Long id) {
-		Id = id;
+		id = id;
 	}
 
 	public String getNome() {

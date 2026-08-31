@@ -1,4 +1,4 @@
-package petBemEstar;
+package br.edu.ifrs.petbemestar.dominio;
 
 public enum TipoProcedimento {
 

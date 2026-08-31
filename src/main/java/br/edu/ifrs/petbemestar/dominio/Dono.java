@@ -1,4 +1,4 @@
-package petBemEstar;
+package br.edu.ifrs.petbemestar.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
